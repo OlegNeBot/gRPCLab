@@ -1,0 +1,27 @@
+﻿@model WareHouseViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table>
+    <thead>
+    <tr>
+        <td>Номер склада</td>
+        <td>Предмет</td>
+        <td>Время</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var i in Model.WareHouses)
+    {
+        @foreach (var j in i.Items)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@j.Name</td>
+                <td>@j.TimeStamp.ToString("f")</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
